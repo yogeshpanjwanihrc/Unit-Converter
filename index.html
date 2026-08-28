@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniConverter - Modern Unit Converter</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>OmniConverter</h1>
+      <p>Fast, precise, dynamic unit conversion</p>
+    </header>
+
+    <main class="converter-card">
+      <div class="category-section">
+        <label for="category">Category</label>
+        <select id="category" onchange="updateUnits()">
+          <option value="length">Length</option>
+          <option value="mass">Mass / Weight</option>
+          <option value="temperature">Temperature</option>
+          <option value="volume">Volume</option>
+          <option value="digital">Digital Storage</option>
+        </select>
+      </div>
+
+      <div class="conversion-grid">
+        <div class="input-group">
+          <label for="fromValue">From</label>
+          <input type="number" id="fromValue" value="1" placeholder="Enter value" oninput="convert()">
+          <select id="fromUnit" onchange="convert()"></select>
+        </div>
+
+        <div class="swap-btn-container">
+          <button id="swapBtn" onclick="swapUnits()" title="Swap Units">⇄</button>
+        </div>
+
+        <div class="input-group">
+          <label for="toValue">To</label>
+          <input type="number" id="toValue" readonly placeholder="Result">
+          <select id="toUnit" onchange="convert()"></select>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; OmniConverter. Built with pure JavaScript.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
